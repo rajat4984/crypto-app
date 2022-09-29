@@ -23,6 +23,12 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
 /* ------------NAVBAR-------------- */
 .navbar {
   display: flex;
@@ -66,7 +72,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 8em;
+  margin: 8em 8em 4em 8em;
   border: 1.5px solid black;
   border-radius: 10px;
 }
@@ -96,13 +102,12 @@ a {
 /* ------------------LIST-ITEM--------------- */
 .list-item {
   border-bottom: 1px solid black;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.list-item:hover{
-  opacity: .5;
-
+.list-item:hover {
+  opacity: 0.5;
 }
 
 .list-item:last-child {
@@ -115,6 +120,19 @@ a {
 .icon {
   display: flex;
   justify-content: center;
+}
+
+/* --------------PAGE-NUMBER---------------- */
+
+.page-number-container {
+  display: flex;
+  justify-content: center;
+  margin: 2em;
+  font-size: 1.4rem;
+}
+
+.page-number-container > div {
+  margin: 0 1em;
 }
 
 /* -----------FOOTER----------------- */
@@ -141,12 +159,12 @@ footer {
   }
 
   /* ----------LIST------------ */
-  .list-container{
+  .list-container {
     margin: 5em 2em;
   }
 
   /* --------LIST-ITEM---------- */
-  .icon > img{
+  .icon > img {
     width: 45%;
   }
 

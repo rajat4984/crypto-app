@@ -1,6 +1,7 @@
 import Footer from "./Components/Footer";
 import List from "./Components/List";
 import Navbar from "./Components/Navbar";
+import PageNumber from "./Components/PageNumber";
 import "./style.css";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Navbar />
       <List />
+      <PageNumber/>
       <Footer/>
     </div>
   );
