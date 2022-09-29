@@ -1,4 +1,3 @@
-import axios from "axios";
 import List from "./Components/List";
 import Navbar from "./Components/Navbar";
 import "./style.css";

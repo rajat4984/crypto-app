@@ -85,6 +85,12 @@ a {
   border-right: 0
 }
 
+.list-heading{
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+/* ------------------LIST-ITEM--------------- */
 .list-item{
   border-bottom: 1px solid black;
 }
@@ -93,10 +99,12 @@ a {
   border-bottom:0;
 }
 
-
-.list-heading{
-  font-weight: bold;
-  border-bottom: 1px solid black;
+.icon > img{
+  width: 30%;
+}
+.icon{
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {

@@ -11,6 +11,7 @@ export const AppProvider = ({ children }) => {
 
   const dataHandler = async () => {
     const {data} = await axios.get(url);
+    console.log(data);
     setData([...data]);
   };
 

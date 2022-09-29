@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useGlobalContext } from "../context";
 
 function ListItem() {
+  const { data, dataHandler } = useGlobalContext();
+
+  useEffect(() => {
+    dataHandler();
+  }, []);
   return (
     <div>
       <div className="list-heading">
@@ -11,95 +17,18 @@ function ListItem() {
         <div className="heading-high">All-time high</div>
         <div className="heading-low">All-time low</div>
       </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-      <div className="list-item">
-        <div className="sNumber">1</div>
-        <div className="symbol">BTC</div>
-        <div className="name">Bitcoin</div>
-        <div className="current-price">34346</div>
-        <div className="high-price">45346</div>
-        <div className="low-price">12211</div>
-      </div>
-     
+      {data.map(({ id, image, symbol, name, current_price, ath, atl }) => {
+        return (
+          <div className="list-item" key={id}>
+            <div className="icon"><img src={`${image}`}></img></div>
+            <div className="symbol">{symbol}</div>
+            <div className="name">{name}</div>
+            <div className="current-price">{current_price}</div>
+            <div className="high-price">{ath}</div>
+            <div className="low-price">{atl}</div>
+          </div>
+        );
+      })}
     </div>
   );
 }
