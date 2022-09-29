@@ -7,11 +7,10 @@ const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [lightMode, setLightMode] = useState(true);
   const [data, setData] = useState([]);
-  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=20&page=2&sparkline=false`;
 
   const dataHandler = async () => {
-    const {data} = await axios.get(url);
-    console.log(data);
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=25&page=1&sparkline=false`;
+    const { data } = await axios.get(url);
     setData([...data]);
   };
 

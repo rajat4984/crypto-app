@@ -26,6 +26,7 @@ function ListItem() {
             <div className="current-price">{current_price}</div>
             <div className="high-price">{ath}</div>
             <div className="low-price">{atl}</div>
+            <hr />
           </div>
         );
       })}

@@ -54,15 +54,15 @@ a {
   color: #d4abf8;
 }
 
-.dark-btn{
-    background: transparent;
-    border: none;
-    color: var(--greywhite);
+.dark-btn {
+  background: transparent;
+  border: none;
+  color: var(--greywhite);
 }
 
 /* ---------------LIST---------------- */
 
-.list-container{
+.list-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -71,48 +71,88 @@ a {
   border-radius: 10px;
 }
 
-.list-item,.list-heading{
+.list-item,
+.list-heading {
   display: grid;
-  grid-template-columns: repeat(6,1fr);
+  grid-template-columns: repeat(6, 1fr);
   justify-items: center;
 }
 
-.list-item>div,.list-heading>div{
+.list-item > div,
+.list-heading > div {
   padding: 1.8em 0;
 }
 
-.list-item > div:last-child,.list-heading > div:last-child{
-  border-right: 0
+.list-item > div:last-child,
+.list-heading > div:last-child {
+  border-right: 0;
 }
 
-.list-heading{
+.list-heading {
   font-weight: bold;
   border-bottom: 1px solid black;
 }
 
 /* ------------------LIST-ITEM--------------- */
-.list-item{
+.list-item {
   border-bottom: 1px solid black;
+  transition: .3s ease-in-out;
+  cursor: pointer;
 }
 
-.list-item:last-child{
-  border-bottom:0;
+.list-item:hover{
+  opacity: .5;
+
 }
 
-.icon > img{
+.list-item:last-child {
+  border-bottom: 0;
+}
+
+.icon > img {
   width: 30%;
 }
-.icon{
+.icon {
   display: flex;
   justify-content: center;
 }
 
+/* -----------FOOTER----------------- */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  background-color: var(--purple);
+  color: var(--greywhite);
+  padding: 1.5%;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
-    html {
-      font-size: 0.8rem;
-    }
-  
-    .navbar {
-      padding: 4%;
-    }
-}  
+  html {
+    font-size: 0.8rem;
+  }
+
+  .navbar {
+    padding: 4%;
+  }
+
+  /* ----------LIST------------ */
+  .list-container{
+    margin: 5em 2em;
+  }
+
+  /* --------LIST-ITEM---------- */
+  .icon > img{
+    width: 45%;
+  }
+
+  /* ----------------FOOTER---------------- */
+  footer {
+    font-size: 1rem;
+    padding: 4%;
+  }
+}
