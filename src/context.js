@@ -7,9 +7,10 @@ const AppContext = React.createContext();
 export const AppProvider = ({ children }) => {
   const [lightMode, setLightMode] = useState(true);
   const [data, setData] = useState([]);
+  const [pageNum, setPageNum] = useState(1);
 
   const dataHandler = async () => {
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=25&page=1&sparkline=false`;
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=20&page=${pageNum}&sparkline=false`;
     const { data } = await axios.get(url);
     setData([...data]);
   };
@@ -24,7 +25,14 @@ export const AppProvider = ({ children }) => {
   };
   return (
     <AppContext.Provider
-      value={{ lightModeHandler, lightMode, dataHandler, data }}
+      value={{
+        lightModeHandler,
+        lightMode,
+        dataHandler,
+        data,
+        setPageNum,
+        pageNum,
+      }}
     >
       {children}
     </AppContext.Provider>

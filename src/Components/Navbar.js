@@ -6,7 +6,7 @@ function Navbar() {
   const { lightModeHandler, lightMode } = useGlobalContext();
   return (
     <nav>
-      <div className="navbar">
+      <div className="navbar" id="nav">
         <div>
           <a href="/" className="brand">
             KryptoMart
@@ -14,7 +14,7 @@ function Navbar() {
         </div>
         <div className="preview">
           <a href="shop" className="preview-link">
-            About-us
+            Markets
           </a>
           <button
             href="cart"

@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 function ListItem() {
-  const { data, dataHandler } = useGlobalContext();
+  const { data, dataHandler,pageNum } = useGlobalContext();
 
   useEffect(() => {
     dataHandler();
-  }, []);
+  }, [pageNum]);
   return (
     <div>
       <div className="list-heading">
@@ -23,9 +23,9 @@ function ListItem() {
             <div className="icon"><img src={`${image}`}></img></div>
             <div className="symbol">{symbol}</div>
             <div className="name">{name}</div>
-            <div className="current-price">{current_price}</div>
-            <div className="high-price">{ath}</div>
-            <div className="low-price">{atl}</div>
+            <div className="current-price">{`₹${current_price}`}</div>
+            <div className="high-price">{`₹${ath}`}</div>
+            <div className="low-price">{`₹${atl}`}</div>
             <hr />
           </div>
         );

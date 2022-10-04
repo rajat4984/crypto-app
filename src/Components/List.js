@@ -1,10 +1,8 @@
-import React,{useEffect} from "react";
+import React from "react";
 
 import ListItem from "./ListItem";
 
 function List() {
-
-  
   return (
     <div>
       <div className="list-container">
