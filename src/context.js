@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useContext, useState } from "react";
 import axios from "axios";
 
@@ -12,6 +12,7 @@ export const AppProvider = ({ children }) => {
     datasets: [],
   });
   const [chartOptions, setChartOptions] = useState({});
+  const [coinInfo, setCoinInfo] = useState("");
 
   const dataHandler = async () => {
     const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=20&page=${pageNum}&sparkline=false`;
@@ -30,6 +31,7 @@ export const AppProvider = ({ children }) => {
 
   const getCoinData = (coinId) => {
     userDataHandler(coinId);
+    getCoinInfo(coinId);
   };
 
   // ---------------FOR-LINE-CHART------------------
@@ -97,6 +99,18 @@ export const AppProvider = ({ children }) => {
     });
   };
 
+  // ------------FOR-COIN-INFO-------------------
+  const getCoinInfo = async (coinId) => {
+    const url = `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
+    const { data } = await axios.get(url);
+    let description = data.description.en;
+    description = description.replace(/(<([^>]+)>)/gi, "");
+    if (description === "") {
+      description = "No data found about this coin";
+    }
+    setCoinInfo(description);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -109,7 +123,9 @@ export const AppProvider = ({ children }) => {
         userDataHandler,
         chartData,
         chartOptions,
-        getCoinData
+        getCoinData,
+        getCoinInfo,
+        coinInfo,
       }}
     >
       {children}

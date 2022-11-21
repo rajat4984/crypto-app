@@ -151,27 +151,35 @@ button {
 /* -----------------COINCARD-CONTAINER----------- */
 
 .coincard-container {
-  height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  min-height: 80vh;
 }
 
 .coincard {
   padding: 1em;
-  display: flex;
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
 }
 
 .linechart-container {
-  padding: 2em;
+  padding: 0.5em;
 }
 
 /* --------------COIN-INFO------------- */
+.coin-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
 .coin-info {
   display: flex;
   justify-content: space-between;
   text-align: justify;
+  align-items: center;
 }
 
 .description > a {

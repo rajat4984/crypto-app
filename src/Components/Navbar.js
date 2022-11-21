@@ -13,9 +13,6 @@ function Navbar() {
           </a>
         </div>
         <div className="preview">
-          <a href="shop" className="preview-link">
-            Markets
-          </a>
           <button
             href="cart"
             className="preview-link dark-btn"
