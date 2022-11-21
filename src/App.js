@@ -4,7 +4,7 @@ import List from "./Components/List";
 import Navbar from "./Components/Navbar";
 import PageNumber from "./Components/PageNumber";
 import { useGlobalContext } from "./context";
-import LineChart from "./Components/LineChart";
+import CoinApp from "./Components/coinPage/CoinApp";
 import "./style.css";
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
   
   return (
     <div className={lightMode ? "dark-text" : "light-text"}>
+      {/* <CoinApp/> */}
       <Navbar />
       <List />
       <PageNumber />
-      <LineChart  />
       <Footer />
     </div>
   );

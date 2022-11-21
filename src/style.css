@@ -148,6 +148,37 @@ button {
   margin: 0 1em;
 }
 
+/* -----------------COINCARD-CONTAINER----------- */
+
+.coincard-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coincard {
+  padding: 1em;
+  display: flex;
+
+}
+
+.linechart-container {
+  padding: 2em;
+}
+
+/* --------------COIN-INFO------------- */
+.coin-info {
+  display: flex;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.description > a {
+  color: blue;
+  text-decoration: underline;
+}
+
 /* -----------FOOTER----------------- */
 a {
   text-decoration: none;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import axios from "axios";
+import { useGlobalContext } from "../../context";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -23,6 +24,8 @@ ChartJS.register(
 );
 
 function LineChart() {
+  const { lightMode } = useGlobalContext();
+
   const [chartData, setChartData] = useState({
     datasets: [],
   });
@@ -46,12 +49,11 @@ function LineChart() {
     ];
 
     const date = new Date(unixTime * 1000); //making date normal
-    const currentMonthNum = date.getMonth(); 
-    const currentMonth = months[currentMonthNum];    //getting month from array
-    const currentDate = date.toLocaleDateString("default").slice(0, 2);    //getting date number ex:17
-    return currentDate + " " + currentMonth;     //adding both date and month and returning
+    const currentMonthNum = date.getMonth();
+    const currentMonth = months[currentMonthNum]; //getting month from array
+    const currentDate = date.toLocaleDateString("default").slice(0, 2); //getting date number ex:17
+    return currentDate + " " + currentMonth; //adding both date and month and returning
   };
-
   const userDataHandler = async () => {
     let pasDate = [];
     let pasPrice = [];
@@ -95,8 +97,8 @@ function LineChart() {
   }, []);
 
   return (
-    <div style={{ width: "70%" }}>
-      <Line options={chartOptions} data={chartData} />
+    <div style={{width:"600px"}}>
+      <Line options={chartOptions} data={chartData}  />
     </div>
   );
 }
