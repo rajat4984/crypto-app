@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
+import { Link } from "react-router-dom";
 
 function ListItem() {
-  const { data, dataHandler,pageNum } = useGlobalContext();
+  const { data, dataHandler, pageNum, getCoinData, lightMode } =
+    useGlobalContext();
 
   useEffect(() => {
     dataHandler();
@@ -19,15 +21,24 @@ function ListItem() {
       </div>
       {data.map(({ id, image, symbol, name, current_price, ath, atl }) => {
         return (
-          <div className="list-item" key={id}>
-            <div className="icon"><img src={`${image}`}></img></div>
+          <Link
+            to="coinInfo"
+            className={
+              lightMode ? "dark-text list-item" : "light-text list-item"
+            }
+            key={id}
+            onClick={() => getCoinData(id)}
+          >
+            <div className="icon">
+              <img src={`${image}`}></img>
+            </div>
             <div className="symbol">{symbol}</div>
             <div className="name">{name}</div>
             <div className="current-price">{`₹${current_price}`}</div>
             <div className="high-price">{`₹${ath}`}</div>
             <div className="low-price">{`₹${atl}`}</div>
             <hr />
-          </div>
+          </Link>
         );
       })}
     </div>
