@@ -13,6 +13,7 @@ export const AppProvider = ({ children }) => {
   });
   const [chartOptions, setChartOptions] = useState({});
   const [coinInfo, setCoinInfo] = useState("");
+  const [coinName, setCoinName] = useState("");
 
   const dataHandler = async () => {
     const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=20&page=${pageNum}&sparkline=false`;
@@ -61,7 +62,6 @@ export const AppProvider = ({ children }) => {
   };
 
   const userDataHandler = async (coinId) => {
-    console.log(`${coinId} is this`);
     let pasDate = [];
     let pasPrice = [];
     const url = `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=inr&days=10&interval=daily`;
@@ -104,11 +104,14 @@ export const AppProvider = ({ children }) => {
     const url = `https://api.coingecko.com/api/v3/coins/${coinId}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`;
     const { data } = await axios.get(url);
     let description = data.description.en;
+    let name = data.name;
     description = description.replace(/(<([^>]+)>)/gi, "");
+    description = description.substring(0,1000) + "...";
     if (description === "") {
       description = "No data found about this coin";
     }
     setCoinInfo(description);
+    setCoinName(name);
   };
 
   return (
@@ -126,6 +129,11 @@ export const AppProvider = ({ children }) => {
         getCoinData,
         getCoinInfo,
         coinInfo,
+        coinName,
+        setCoinName,
+        setCoinInfo,
+        setChartData,
+        setChartOptions
       }}
     >
       {children}

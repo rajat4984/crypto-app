@@ -148,6 +148,14 @@ button {
   margin: 0 1em;
 }
 
+/* -----------------LINE-CHART--------------------- */
+.cross-icon{
+  /* position: relative;
+  left: 100%; */
+  cursor: pointer;
+  float: right;
+}
+
 /* -----------------COINCARD-CONTAINER----------- */
 
 .coincard-container {
@@ -155,13 +163,15 @@ button {
   justify-content: space-around;
   align-items: center;
   min-height: 80vh;
+  
 }
 
 .coincard {
-  padding: 1em;
+  padding: 3em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+
 }
 
 .linechart-container {
@@ -176,10 +186,12 @@ button {
   padding: 1em;
 }
 .coin-info {
-  display: flex;
-  justify-content: space-between;
   text-align: justify;
-  align-items: center;
+}
+
+.coin-heading {
+  text-align: center;
+  padding-bottom: 1em;
 }
 
 .description > a {

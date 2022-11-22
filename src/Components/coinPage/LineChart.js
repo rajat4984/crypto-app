@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useNavigate } from "react-router";
 import { Line } from "react-chartjs-2";
-import axios from "axios";
 import { useGlobalContext } from "../../context";
+import { ImCross } from "react-icons/im";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,15 +25,33 @@ ChartJS.register(
 );
 
 function LineChart() {
-  const { lightMode,userDataHandler,chartData,chartOptions } = useGlobalContext();
+  const {
+    setCoinName,
+    setCoinInfo,
+    setChartData,
+    setChartOptions,
+    lightMode,
+    userDataHandler,
+    chartData,
+    chartOptions,
+  } = useGlobalContext();
 
-  // useEffect(() => {
-  //   userDataHandler();
-  // }, []);
+  const navigate = useNavigate();
+
+  const goPrevPage = () => {
+    navigate(-1);
+    setCoinName("");
+    setCoinInfo("");
+    setChartData({
+      datasets: [],
+    });
+    setChartOptions({});
+  };
 
   return (
-    <div style={{width:"600px"}}>
-      <Line options={chartOptions} data={chartData}  />
+    <div style={{ width: "600px" }}>
+      <ImCross onClick={goPrevPage} className="cross-icon" />
+      <Line options={chartOptions} data={chartData} />
     </div>
   );
 }
