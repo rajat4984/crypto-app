@@ -1,9 +1,11 @@
 import React from "react";
-import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import { useGlobalContext } from "../context";
+import { MdOutlineNavigateNext, MdOutlineNavigateBefore } from "react-icons/md";
 
 function PageNumber() {
-  const { pageNum, setPageNum } = useGlobalContext();
+  const { pageNum, setPageNum, lightMode } = useGlobalContext();
+  const darkModeStyle = { color: "#f4f5f6", fontSize: "1.7em" };
+  const lightModeStyle = { color: "black", fontSize: "1.7em" };
   return (
     <div>
       <div className="page-number-container">
@@ -11,10 +13,12 @@ function PageNumber() {
           <button
             className="prev-page-btn"
             onClick={() => {
-              pageNum === 0 ? setPageNum(1) : setPageNum(pageNum - 1);
+              pageNum === 1 ? setPageNum(1) : setPageNum(pageNum - 1);
             }}
           >
-            <GrCaretPrevious />
+            <MdOutlineNavigateBefore
+              style={lightMode == true ? lightModeStyle : darkModeStyle}
+            />
           </button>
         </a>
         <div className="page-number">{pageNum}</div>
@@ -23,7 +27,9 @@ function PageNumber() {
             className="next-page-btn"
             onClick={() => setPageNum(pageNum + 1)}
           >
-            <GrCaretNext />
+            <MdOutlineNavigateNext
+              style={lightMode == true ? lightModeStyle : darkModeStyle}
+            />
           </button>
         </a>
       </div>

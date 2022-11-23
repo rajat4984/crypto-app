@@ -30,8 +30,6 @@ function LineChart() {
     setCoinInfo,
     setChartData,
     setChartOptions,
-    lightMode,
-    userDataHandler,
     chartData,
     chartOptions,
   } = useGlobalContext();

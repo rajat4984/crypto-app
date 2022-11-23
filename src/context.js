@@ -80,11 +80,13 @@ export const AppProvider = ({ children }) => {
           data: pasPrice,
           borderColor: "black",
           borderWidth: 2,
+          borderColor:lightMode?"black":"white",
         },
       ],
     });
 
     setChartOptions({
+      backgroundColor:"white",
       tension: 0.4,
       responsive: true,
       plugins: {
@@ -106,10 +108,10 @@ export const AppProvider = ({ children }) => {
     let description = data.description.en;
     let name = data.name;
     description = description.replace(/(<([^>]+)>)/gi, "");
-    description = description.substring(0,1000) + "...";
     if (description === "") {
       description = "No data found about this coin";
     }
+    description = description.substring(0, 1000) + "...";
     setCoinInfo(description);
     setCoinName(name);
   };
@@ -133,7 +135,7 @@ export const AppProvider = ({ children }) => {
         setCoinName,
         setCoinInfo,
         setChartData,
-        setChartOptions
+        setChartOptions,
       }}
     >
       {children}

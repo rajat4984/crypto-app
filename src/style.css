@@ -81,11 +81,19 @@ button {
 
 /* ---------------LIST---------------- */
 
+.main-heading{
+  color: #d4abf8;
+  text-shadow: 2px 2px 0px black; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
+  text-align: center;
+  margin: 2em;
+  font-size: 1.5em;
+}
+
 .list-container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 8em 8em 4em 8em;
+  margin: 2em 8em 4em 8em;
   border: 1.5px solid black;
   border-radius: 10px;
 }
@@ -148,10 +156,9 @@ button {
   margin: 0 1em;
 }
 
+
 /* -----------------LINE-CHART--------------------- */
 .cross-icon{
-  /* position: relative;
-  left: 100%; */
   cursor: pointer;
   float: right;
 }
@@ -192,12 +199,15 @@ button {
 .coin-heading {
   text-align: center;
   padding-bottom: 1em;
+  color: #d4abf8;
+  text-shadow: 2px 2px 0px black; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
 .description > a {
   color: blue;
   text-decoration: underline;
 }
+
 
 /* -----------FOOTER----------------- */
 a {
