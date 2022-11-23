@@ -81,7 +81,7 @@ button {
 
 /* ---------------LIST---------------- */
 
-.main-heading{
+.main-heading {
   color: #d4abf8;
   text-shadow: 2px 2px 0px black; /* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
   text-align: center;
@@ -156,9 +156,8 @@ button {
   margin: 0 1em;
 }
 
-
 /* -----------------LINE-CHART--------------------- */
-.cross-icon{
+.cross-icon {
   cursor: pointer;
   float: right;
 }
@@ -170,15 +169,13 @@ button {
   justify-content: space-around;
   align-items: center;
   min-height: 80vh;
-  
 }
 
 .coincard {
   padding: 3em;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
-
 }
 
 .linechart-container {
@@ -208,7 +205,6 @@ button {
   text-decoration: underline;
 }
 
-
 /* -----------FOOTER----------------- */
 a {
   text-decoration: none;
@@ -235,6 +231,10 @@ footer {
   /* ----------LIST------------ */
   .list-container {
     margin: 5em 2em;
+  }
+
+  .linechart-container{
+    width: 105%;
   }
 
   /* --------LIST-ITEM---------- */

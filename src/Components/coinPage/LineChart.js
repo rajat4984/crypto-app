@@ -47,7 +47,7 @@ function LineChart() {
   };
 
   return (
-    <div style={{ width: "600px" }}>
+    <div className="linechart-container">
       <ImCross onClick={goPrevPage} className="cross-icon" />
       <Line options={chartOptions} data={chartData} />
     </div>
