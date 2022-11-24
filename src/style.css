@@ -238,8 +238,12 @@ footer {
   }
 
   /* --------LIST-ITEM---------- */
+  .list-item{
+    padding: 1em;
+    gap: 10px;
+  }
   .icon > img {
-    width: 45%;
+    width: 40%;
   }
 
   /* ----------------FOOTER---------------- */

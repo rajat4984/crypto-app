@@ -34,9 +34,9 @@ function ListItem() {
             </div>
             <div className="symbol">{symbol}</div>
             <div className="name">{name}</div>
-            <div className="current-price">{`₹${current_price}`}</div>
-            <div className="high-price">{`₹${ath}`}</div>
-            <div className="low-price">{`₹${atl}`}</div>
+            <div className="current-price">{`₹${parseFloat(current_price.toFixed(2))}.`}</div>
+            <div className="high-price">{`₹${parseFloat(ath.toFixed(2))}`}</div>
+            <div className="low-price">{`₹${parseFloat(atl.toFixed(2))}`}</div>
             <hr />
           </Link>
         );
