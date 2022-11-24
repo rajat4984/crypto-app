@@ -162,6 +162,12 @@ button {
   float: right;
 }
 
+.linechart-container{
+  width: 600px;
+  height: 300px;
+  padding: .5em;
+}
+
 /* -----------------COINCARD-CONTAINER----------- */
 
 .coincard-container {
@@ -176,10 +182,6 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-items: center;
-}
-
-.linechart-container {
-  padding: 0.5em;
 }
 
 /* --------------COIN-INFO------------- */

@@ -86,6 +86,7 @@ export const AppProvider = ({ children }) => {
     });
 
     setChartOptions({
+      maintainAspectRatio:false,
       backgroundColor:"white",
       tension: 0.4,
       responsive: true,
