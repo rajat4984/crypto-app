@@ -47,9 +47,11 @@ function LineChart() {
   };
 
   return (
-    <div className="linechart-container">
+    <div className="line-cross-container">
       <ImCross onClick={goPrevPage} className="cross-icon" />
-      <Line options={chartOptions} data={chartData} className="line-chart"/>
+      <div className="linechart-container">
+        <Line options={chartOptions} data={chartData} className="line-chart" />
+      </div>
     </div>
   );
 }

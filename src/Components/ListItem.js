@@ -15,9 +15,9 @@ function ListItem() {
         <div className="heading-icon">Icon</div>
         <div className="heading-symbol">Symbol</div>
         <div className="heading-name">Name</div>
-        <div className="heading-current-price">Current price</div>
-        <div className="heading-high">All-time high</div>
-        <div className="heading-low">All-time low</div>
+        <div className="heading-current-price">Price</div>
+        <div className="heading-high">Ath</div>
+        <div className="heading-low">Atl</div>
       </div>
       {data.map(({ id, image, symbol, name, current_price, ath, atl }) => {
         return (

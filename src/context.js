@@ -86,10 +86,10 @@ export const AppProvider = ({ children }) => {
     });
 
     setChartOptions({
-      maintainAspectRatio:false,
+      maintainAspectRatio: false,
       backgroundColor:"white",
       tension: 0.4,
-      responsive: true,
+      // responsive: true,
       plugins: {
         legend: {
           position: "top",

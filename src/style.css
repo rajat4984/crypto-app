@@ -165,7 +165,6 @@ button {
 .linechart-container{
   width: 600px;
   height: 300px;
-  padding: .5em;
 }
 
 /* -----------------COINCARD-CONTAINER----------- */
@@ -180,7 +179,7 @@ button {
 .coincard {
   padding: 3em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   justify-items: center;
 }
 
@@ -236,7 +235,14 @@ footer {
   }
 
   .linechart-container{
-    width: 105%;
+    width: 100%;
+  }
+  .line-cross-container{
+    margin: 3.5em;
+  }
+
+  .coin-info-container{
+    margin: 0 3em;
   }
 
   /* --------LIST-ITEM---------- */
